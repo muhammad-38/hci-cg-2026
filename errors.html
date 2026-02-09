@@ -2,22 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HTML Error Log - My Learning Journey</title>
+    <title>Common HTML Mistakes</title>
     <style>
-        /* Lab 01 Allowed Properties Only */
-        body { font-family: 'Courier New', Courier, monospace; color: #1a1a1a; }
-        header { background-color: #343a40; color: #ffffff; }
-        .error-title { color: #b22222; font-weight: bold; }
-        .solution-title { color: #006400; font-weight: bold; }
-        table { border-collapse: collapse; width: 100%; }
-        th { background-color: #f2f2f2; }
+        /* Keeping it simple as per Lab 01 rules */
+        body { font-family: 'Segoe UI', sans-serif; color: #444; }
+        header { background-color: #fcfcfc; }
+        .mistake-row { background-color: #fff5f5; }
+        .fix-row { background-color: #f5fff5; }
+        h1 { color: #8b0000; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Compulsory Section: 10 HTML Learning Errors</h1>
-        <p>A reflection on technical mistakes and their impact on User Experience.</p>
+        <h1>Common HTML Mistakes</h1>
+        <p>I realized that coding for HCI is different because every tag affects the user.</p>
     </header>
 
     <nav aria-label="Primary navigation">
@@ -29,96 +28,84 @@
 
     <main>
         <section>
-            <h2>Common Mistakes &amp; Solutions</h2>
-            <p>During the first 4 weeks, I identified these 10 errors. Correcting them improved the <strong>Gulf of Evaluation</strong> for users relying on assistive technology.</p>
+            <h2>My "Identify and Fix" List</h2>
+            <p>During the first month of class, I made these mistakes. Here is how I fixed them based on the <strong>Dix book</strong> and our lab rules.</p>
 
             <table border="1">
-                <caption>Analysis of 10 HTML Structural Errors</caption>
+                <caption>HTML Practice: Learning from mistakes</caption>
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">The Mistake (Incorrect)</th>
-                        <th scope="col">The Fix (Semantic/Correct)</th>
-                        <th scope="col">HCI Rationale</th>
+                        <th scope="col">The Error</th>
+                        <th scope="col">The Correction</th>
+                        <th scope="col">Why it's better (HCI Reason)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1</td>
-                        <td><code>&lt;b&gt;Main Title&lt;/b&gt;</code></td>
-                        <td><code>&lt;h1&gt;Main Title&lt;/h1&gt;</code></td>
-                        <td>Dix (p. 209) emphasizes navigation structure. Screen readers use H1-H6 to build a map for the user.</td>
+                        <td>Using <code>&lt;b&gt;</code> to make a big heading.</td>
+                        <td>Using <code>&lt;h1&gt;</code> instead.</td>
+                        <td>Dix (p. 209) says structure helps navigation. Screen readers need headings to "read" the page map.</td>
                     </tr>
                     <tr>
-                        <td>2</td>
-                        <td><code>&lt;img src="btn.png"&gt;</code></td>
-                        <td><code>&lt;img src="btn.png" alt="Submit"&gt;</code></td>
-                        <td>Missing alt text creates a "Gulf of Evaluation" for visually impaired users.</td>
+                        <td>Forgetting <code>alt</code> text for images.</td>
+                        <td>Adding <code>alt="Submit button"</code>.</td>
+                        <td>If the image doesn't load, the user gets stuck in a "Gulf of Evaluation" (Norman, 1988).</td>
                     </tr>
                     <tr>
-                        <td>3</td>
-                        <td><code>&lt;nav&gt; &lt;a&gt;...&lt;/a&gt; &lt;/nav&gt;</code></td>
-                        <td><code>&lt;nav&gt;&lt;ul&gt;&lt;li&gt;&lt;a&gt;...&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;</code></td>
-                        <td>Semantic lists tell screen readers exactly how many menu items exist.</td>
+                        <td>Putting <code>&lt;a&gt;</code> directly inside <code>&lt;ul&gt;</code>.</td>
+                        <td>Wrapping every link in an <code>&lt;li&gt;</code>.</td>
+                        <td>This is a strict Lab 01 rule. Lists must have list items for screen readers to work right.</td>
                     </tr>
                     <tr>
-                        <td>4</td>
-                        <td><code>&lt;div id="nav"&gt;</code> (Twice)</td>
-                        <td>Use <code>class="nav"</code> or unique IDs</td>
-                        <td>Duplicate IDs break the Document Object Model (DOM) and make interaction unpredictable.</td>
+                        <td>Using the same <code>id</code> twice on one page.</td>
+                        <td>Giving every element a unique ID.</td>
+                        <td>Computers get confused if two things have the same ID. It breaks the interaction logic.</td>
                     </tr>
                     <tr>
-                        <td>5</td>
-                        <td><code>&lt;font color="red"&gt;</code></td>
-                        <td><code>&lt;style&gt; color: red; &lt;/style&gt;</code></td>
-                        <td>Separation of concerns. Presentation (CG) should not be mixed with structure (HTML).</td>
+                        <td>Writing "Click Here" for my links.</td>
+                        <td>Writing "View Week 1 PDF" instead.</td>
+                        <td>Dix mentions clarity. Descriptive links help the user's "Mental Processor" decide faster.</td>
                     </tr>
                     <tr>
-                        <td>6</td>
-                        <td><code>&lt;a href="#"&gt;Click Here&lt;/a&gt;</code></td>
-                        <td><code>&lt;a href="cv.html"&gt;View My CV&lt;/a&gt;</code></td>
-                        <td>"Click here" is vague. Descriptive links reduce the user's "Mental Preparation" (M-operator) time.</td>
+                        <td>Not connecting a <code>&lt;label&gt;</code> to my input.</td>
+                        <td>Using <code>for="id"</code> to link them.</td>
+                        <td>This makes the label clickable, which helps with "Pointing" (P operator in KLM).</td>
                     </tr>
                     <tr>
-                        <td>7</td>
-                        <td><code>&lt;label&gt;Name:&lt;/label&gt; &lt;input&gt;</code></td>
-                        <td><code>&lt;label for="n"&gt;Name:&lt;/label&gt; &lt;input id="n"&gt;</code></td>
-                        <td>Without the 'for' attribute, the label isn't clickable, increasing the difficulty of "Pointing" (P-operator).</td>
+                        <td>Using a table to fix my page layout.</td>
+                        <td>Only using tables for actual data.</td>
+                        <td>Tables are for comparison (like Norman vs GOMS), not for design.</td>
                     </tr>
                     <tr>
-                        <td>8</td>
-                        <td><code>&lt;table&gt;&lt;tr&gt;&lt;td&gt;Header&lt;/td&gt;...</code></td>
-                        <td><code>&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;...</code></td>
-                        <td>Using <code>th</code> with <code>scope</code> is vital for tabular data accessibility.</td>
+                        <td>Skipping <code>&lt;h2&gt;</code> and going straight to <code>&lt;h3&gt;</code>.</td>
+                        <td>Following <code>h1 -> h2 -> h3</code>.</td>
+                        <td>Broken hierarchy messes up the user's "Mental Model" of how the info is organized.</td>
                     </tr>
                     <tr>
-                        <td>9</td>
-                        <td>Skipping <code>&lt;h2&gt;</code> and going to <code>&lt;h3&gt;</code></td>
-                        <td>Maintain strict <code>h1 -> h2 -> h3</code> hierarchy</td>
-                        <td>Broken hierarchy confuses the user's mental model of the page content.</td>
+                        <td>Missing the <code>&lt;!DOCTYPE html&gt;</code> at the top.</td>
+                        <td>Always starting with the Doctype.</td>
+                        <td>It tells the browser exactly how to render the pixels.</td>
                     </tr>
                     <tr>
-                        <td>10</td>
-                        <td>Missing <code>&lt;!DOCTYPE html&gt;</code></td>
-                        <td>Include <code>&lt;!DOCTYPE html&gt;</code> at top</td>
-                        <td>Prevents "Quirks Mode," ensuring the "Computer" side of the interaction renders pixels correctly.</td>
+                        <td>Putting <code>color="red"</code> inside the HTML tag.</td>
+                        <td>Using a <code>&lt;style&gt;</code> block at the top.</td>
+                        <td>Keeps the code clean. We should separate "content" from "computer graphics."</td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
         <section>
-            <h3>Reference Scrutiny</h3>
+            <h3>Books I double-checked:</h3>
             <ul>
-                <li><strong>Dix et al. (2004):</strong> Human-Computer Interaction, 3rd Edition. Chapter 5: Navigation Design (p. 209).</li>
-                <li><strong>Norman (1988):</strong> The Design of Everyday Things. (Gulf of Execution/Evaluation).</li>
-                <li><strong>Lab 01 Instructions:</strong> Semantic HTML Requirements Table.</li>
+                <li><strong>Dix, A. et al. (2004).</strong> <em>Human-Computer Interaction.</em> (Ch 5 &amp; 12).</li>
+                <li><strong>Norman, D. (1988).</strong> <em>The Design of Everyday Things.</em></li>
             </ul>
         </section>
     </main>
 
     <footer>
-        <p>Lab Assignment 01 | HTML Understanding Demonstrated</p>
+        <p>HCI &amp; CG Lab - Student Submission</p>
     </footer>
 
 </body>
