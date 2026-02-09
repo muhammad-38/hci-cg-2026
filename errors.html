@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Error Log - My Learning Journey</title>
+    <style>
+        /* Lab 01 Allowed Properties Only */
+        body { font-family: 'Courier New', Courier, monospace; color: #1a1a1a; }
+        header { background-color: #343a40; color: #ffffff; }
+        .error-title { color: #b22222; font-weight: bold; }
+        .solution-title { color: #006400; font-weight: bold; }
+        table { border-collapse: collapse; width: 100%; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Compulsory Section: 10 HTML Learning Errors</h1>
+        <p>A reflection on technical mistakes and their impact on User Experience.</p>
+    </header>
+
+    <nav aria-label="Primary navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="learnings/index.html">Weekly Learnings</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Common Mistakes &amp; Solutions</h2>
+            <p>During the first 4 weeks, I identified these 10 errors. Correcting them improved the <strong>Gulf of Evaluation</strong> for users relying on assistive technology.</p>
+
+            <table border="1">
+                <caption>Analysis of 10 HTML Structural Errors</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">The Mistake (Incorrect)</th>
+                        <th scope="col">The Fix (Semantic/Correct)</th>
+                        <th scope="col">HCI Rationale</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><code>&lt;b&gt;Main Title&lt;/b&gt;</code></td>
+                        <td><code>&lt;h1&gt;Main Title&lt;/h1&gt;</code></td>
+                        <td>Dix (p. 209) emphasizes navigation structure. Screen readers use H1-H6 to build a map for the user.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><code>&lt;img src="btn.png"&gt;</code></td>
+                        <td><code>&lt;img src="btn.png" alt="Submit"&gt;</code></td>
+                        <td>Missing alt text creates a "Gulf of Evaluation" for visually impaired users.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><code>&lt;nav&gt; &lt;a&gt;...&lt;/a&gt; &lt;/nav&gt;</code></td>
+                        <td><code>&lt;nav&gt;&lt;ul&gt;&lt;li&gt;&lt;a&gt;...&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;</code></td>
+                        <td>Semantic lists tell screen readers exactly how many menu items exist.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><code>&lt;div id="nav"&gt;</code> (Twice)</td>
+                        <td>Use <code>class="nav"</code> or unique IDs</td>
+                        <td>Duplicate IDs break the Document Object Model (DOM) and make interaction unpredictable.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><code>&lt;font color="red"&gt;</code></td>
+                        <td><code>&lt;style&gt; color: red; &lt;/style&gt;</code></td>
+                        <td>Separation of concerns. Presentation (CG) should not be mixed with structure (HTML).</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><code>&lt;a href="#"&gt;Click Here&lt;/a&gt;</code></td>
+                        <td><code>&lt;a href="cv.html"&gt;View My CV&lt;/a&gt;</code></td>
+                        <td>"Click here" is vague. Descriptive links reduce the user's "Mental Preparation" (M-operator) time.</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><code>&lt;label&gt;Name:&lt;/label&gt; &lt;input&gt;</code></td>
+                        <td><code>&lt;label for="n"&gt;Name:&lt;/label&gt; &lt;input id="n"&gt;</code></td>
+                        <td>Without the 'for' attribute, the label isn't clickable, increasing the difficulty of "Pointing" (P-operator).</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><code>&lt;table&gt;&lt;tr&gt;&lt;td&gt;Header&lt;/td&gt;...</code></td>
+                        <td><code>&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;...</code></td>
+                        <td>Using <code>th</code> with <code>scope</code> is vital for tabular data accessibility.</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Skipping <code>&lt;h2&gt;</code> and going to <code>&lt;h3&gt;</code></td>
+                        <td>Maintain strict <code>h1 -> h2 -> h3</code> hierarchy</td>
+                        <td>Broken hierarchy confuses the user's mental model of the page content.</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Missing <code>&lt;!DOCTYPE html&gt;</code></td>
+                        <td>Include <code>&lt;!DOCTYPE html&gt;</code> at top</td>
+                        <td>Prevents "Quirks Mode," ensuring the "Computer" side of the interaction renders pixels correctly.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h3>Reference Scrutiny</h3>
+            <ul>
+                <li><strong>Dix et al. (2004):</strong> Human-Computer Interaction, 3rd Edition. Chapter 5: Navigation Design (p. 209).</li>
+                <li><strong>Norman (1988):</strong> The Design of Everyday Things. (Gulf of Execution/Evaluation).</li>
+                <li><strong>Lab 01 Instructions:</strong> Semantic HTML Requirements Table.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Lab Assignment 01 | HTML Understanding Demonstrated</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Week 04: Math vs. Design - Learning Portfolio</title>
+    <style>
+        /* Lab 01 Allowed CSS */
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; color: #212529; }
+        header { background-color: #343a40; color: white; }
+        .math-box { background-color: #e2e3e5; }
+        .summary-note { color: #004085; background-color: #cce5ff; }
+        h1, h2 { color: #007bff; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Week 04: Predictive Modeling (GOMS &amp; KLM)</h1>
+        <p>Doing the math behind the clicks.</p>
+    </header>
+
+    <nav aria-label="Primary navigation">
+        <ul>
+            <li><a href="index.html">Learnings Hub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>GOMS: The "Expert" Model</h2>
+            <p>
+                Last week, Norman's model was about how users think and feel. This week, <strong>GOMS (Goals, Operators, Methods, Selection Rules)</strong> showed me a different side of HCI. It treats the user like a professional who already knows the system. 
+            </p>
+            <p>
+                As we discussed in the <strong>Toggle Switch Interaction</strong> example (Slide 1), GOMS breaks down a simple "Turn on Wi-Fi" task into the specific logic an expert uses to choose the fastest route.
+            </p>
+        </section>
+
+        <section class="math-box">
+            <h2>KLM: The Stopwatch of HCI</h2>
+            <p>
+                The <strong>Keystroke-Level Model (KLM)</strong> is like a stopwatch. By using the operators from <strong>Dix et al. (p. 437)</strong>, we can predict task time.
+            </p>
+            <ul>
+                <li><strong>K (Keystroke):</strong> ~0.2s</li>
+                <li><strong>P (Pointing):</strong> ~1.1s</li>
+                <li><strong>H (Homing):</strong> ~0.4s (Moving hand from mouse to keys)</li>
+                <li><strong>M (Mental Preparation):</strong> ~1.35s (The "thinking" pause)</li>
+            </ul>
+        </section>
+
+        
+
+        <section>
+            <h2>GOMS 1983 vs. Norman 1988</h2>
+            <p>I found the "Parallel Analysis" from the lab really helpful for seeing how these two famous theories overlap.</p>
+            
+            <table border="1">
+                <caption>Comparison of Norman and GOMS (Lab 01 Data)</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Norman (Action Cycle)</th>
+                        <th scope="col">GOMS (1983)</th>
+                        <th scope="col">Alignment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Goal (User Intention)</th>
+                        <td>Goal (Top-level Objective)</td>
+                        <td>Perfect Match</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Plan (Mental State)</th>
+                        <td>Methods &amp; Selection Rules</td>
+                        <td>Cognitive Decision</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Execute (Physical Act)</th>
+                        <td>Operators (The actual clicks)</td>
+                        <td>Direct Action</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="summary-note">
+            <h2>My Takeaway: Who Paid?</h2>
+            <p>
+                The "Who Paid" problem from our lab assignment (Slide 6) showed why we need these models. When a bill is split, the **Cognitive Load** is huge because users have to rely on **Recall**. By using KLM, we can see that a manual calculation takes way longer than a well-designed UI "toggle" because of all the 'M' (Mental) operators involved.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>HCI-CG 2026 | References: Card et al. (1983) &amp; Dix et al. (2004) Ch. 12</p>
+    </footer>
+
+</body>
+</html>
